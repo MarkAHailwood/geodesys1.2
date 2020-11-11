@@ -1,0 +1,45 @@
+<head>
+    <title>
+        Vue Big Picture - TodoMVC
+    </title>
+
+    <!-- Bootstrap styles are used throughout this application. They are all included in this one CSS Link. -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <!-- The app uses a very limited number of styles, found in its local CSS file here. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container col-lg-4">
+    <h1 class="mt-5">
+        Find FLood Data
+    </h1>
+
+    <!-- This div, with the ID "app", is where the application appears when it runs. -->
+<div id="app"></div>
+
+<!-- This unusual tag is a script text/template. It does not actually appear on the page as HTML. However, Vue can reference this HTML by ID and use it essentially as a template string. -->
+<script type="text/x-template" id="app-template">
+    <section>
+            <form v-on:submit.prevent="getPosts" class="mt-3">
+                <input
+                        type="text"
+                        v-model="text"
+                        class="form-control"
+                        placeholder="enter region">
+            
+                <!-- Note the property :disabled. It begins with a colon (:), indicating that Vue should interpret the value as an expression, and not a string.-->
+                <button class="btn btn-primary mt-2" v-on:click="getPosts(text)" >
+                    Get flood data
+                </button>
+            {{ testText }}
+            </form>     
+        </section>
+    </script>
+
+    <!-- Vue can be included as a script tag at the end of the application's HTML. There is no need for a build step at all, if you don't want one. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+
+    <!-- Finally, the JavaScript file containing our application logic. -->
+    <script src="app.js"></script>
+</body>
