@@ -7,4 +7,4 @@ This is an html applicaiton that uses vue.js, bootstrap 4 and axios as script ta
 Clone locally. Open in VS code.
 
 Run: npm install -g http-server 
-Run: npm http-server
+Run: http-server
